@@ -25,7 +25,7 @@ main .player-display {
   font-weight: 300;
 }
 
-main .player-display .player-num {
+main .player-display #player-num {
   font-size: 1.2em;
 }
 
