@@ -1,6 +1,90 @@
+// Montserrat font.
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+
+$river: #3498db;
+$alizarin: #e74c3c;
+$clouds: #ecf0f1;
+
 * {
   padding: 0;
   margin: 0;
   border: 0;
 }
 
+body {
+  font-family: "Montserrat", "sans-serif";
+}
+
+header {
+  background-color: $river;
+
+  padding: 1em;
+
+  h1 {
+    color: white;
+    text-align: center;
+  }
+}
+
+
+main {
+  .player-display {
+    text-align: center;
+    margin: .5em 0;
+
+    font-weight: 300;
+
+    .player-num {
+      font-size: 1.2em;
+    }
+  }
+
+  .game-board {
+    display: grid;
+    grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr;
+
+    height: 30em;
+    width: 30em;
+
+    margin: 1em auto 1em auto;
+
+    border: 3px $river solid;
+    border-radius: 8px;
+
+    .board-locker {
+      padding: 2rem;
+      margin: 0.5rem;
+      border-radius: 5%;
+
+      background-color: $clouds;
+
+      font-size: 4em;
+      color: black;
+
+      &:hover {
+        transition: all ease 200ms;
+        background-color: #d3dcde;
+      }
+
+      &[data-player="1"] {
+        background-image: url("../icons/circle.svg");
+        background-size: 80%;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-color: $river;
+      }
+
+      &[data-player="2"] {
+        background-image: url("../icons/cross.svg");
+        background-size: 80%;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-color: $alizarin;
+      }
+    }
+  }
+}
+
+footer {
+  text-align: center;
+}

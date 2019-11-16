@@ -1,10 +1,79 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
 * {
   padding: 0;
   margin: 0;
   border: 0;
 }
 
-main {
-  background-color: red;
+body {
+  font-family: "Montserrat", "sans-serif";
+}
+
+header {
+  background-color: #3498db;
+  padding: 1em;
+}
+
+header h1 {
+  color: white;
+  text-align: center;
+}
+
+main .player-display {
+  text-align: center;
+  margin: .5em 0;
+  font-weight: 300;
+}
+
+main .player-display .player-num {
+  font-size: 1.2em;
+}
+
+main .game-board {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1fr 1fr 1fr;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr;
+  height: 30em;
+  width: 30em;
+  margin: 1em auto 1em auto;
+  border: 3px #3498db solid;
+  border-radius: 8px;
+}
+
+main .game-board .board-locker {
+  padding: 2rem;
+  margin: 0.5rem;
+  border-radius: 5%;
+  background-color: #ecf0f1;
+  font-size: 4em;
+  color: black;
+}
+
+main .game-board .board-locker:hover {
+  -webkit-transition: all ease 200ms;
+  transition: all ease 200ms;
+  background-color: #d3dcde;
+}
+
+main .game-board .board-locker[data-player="1"] {
+  background-image: url("../icons/circle.svg");
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #3498db;
+}
+
+main .game-board .board-locker[data-player="2"] {
+  background-image: url("../icons/cross.svg");
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #e74c3c;
+}
+
+footer {
+  text-align: center;
 }
 /*# sourceMappingURL=style.css.map */
