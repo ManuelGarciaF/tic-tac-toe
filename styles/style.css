@@ -75,5 +75,6 @@ main .game-board .board-locker[data-player="2"] {
 
 footer {
   text-align: center;
+  margin: 2em 0 1em 0;
 }
 /*# sourceMappingURL=style.css.map */

@@ -4,6 +4,7 @@
 $river: #3498db;
 $alizarin: #e74c3c;
 $clouds: #ecf0f1;
+$clouds-darker: #d3dcde;
 
 * {
   padding: 0;
@@ -63,7 +64,7 @@ main {
 
       &:hover {
         transition: all ease 200ms;
-        background-color: #d3dcde;
+        background-color: $clouds-darker;
       }
 
       &[data-player="1"] {
@@ -87,4 +88,5 @@ main {
 
 footer {
   text-align: center;
+  margin: 2em 0 1em 0;
 }
