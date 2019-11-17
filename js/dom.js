@@ -1,6 +1,26 @@
-import * as game from './game.js'
+import * as game from "./game.js";
 
-"use strict";
+const toggleBanner = show => {
+  const property = show ? "block" : "none"
+  document.querySelector(".result-banner").style.display = property;
+  document.querySelector("#shadow").style.display = property;
+}
+
+const displayResults = result => {
+  toggleBanner(true)
+
+  document.querySelector("#result").textContent =
+    result === 0 ? "It's a tie!" : `Player ${result} won!`;
+};
+
+const refresh = () => {
+  game.getBoard().forEach((elem, index) => {
+      document
+        .querySelector(`[data-index="${index}"]`)
+        .setAttribute("data-player", elem);
+  }
+  );
+};
 
 const container = document.querySelector(".game-board");
 
@@ -15,28 +35,24 @@ for (let i = 0; i < 9; i++) {
 
   button.addEventListener("click", event => {
     const gameState = game.makeMove(event.target.getAttribute("data-index"));
-    console.log({ gameState });
-    if (gameState !== -1) _displayResults(gameState);
+    if (gameState > -1) displayResults(gameState);
 
-    _refresh();
+    refresh();
 
     document.querySelector("#player-num").textContent = game.getCurrentPlayer();
   });
 }
 
-const _displayResults = result => {
-  document.querySelector(".result-banner").style.display = "block";
-  document.querySelector("#shadow").style.display = "block";
+document.querySelector(".play-player").addEventListener("click", event => {
+  game.reset(false);
+  toggleBanner(false)
+  refresh();
+  console.log("reset!")
+});
 
-  document.querySelector("#result").textContent =
-    result === 0 ? "It's a tie!" : `Player ${result} won!`;
-};
-
-const _refresh = () => {
-  game.board.forEach((elem, index) => {
-    if (elem !== 0)
-      document
-        .querySelector(`[data-index="${index}"]`)
-        .setAttribute("data-player", elem);
-  });
-};
+document.querySelector(".play-ai").addEventListener("click", event => {
+  game.reset(true);
+  toggleBanner(false)
+  refresh();
+  console.log("reset!")
+});
