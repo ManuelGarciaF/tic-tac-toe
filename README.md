@@ -14,3 +14,9 @@ Contains the game logic.
 
 ### dom.js
 Interfaces `game.js` with the page.
+
+### ai.js
+Contains Ai
+
+#### Exports:
+- `aiRandom`: Receives the board array, returns a random valid index for a move.
