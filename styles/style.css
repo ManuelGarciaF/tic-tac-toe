@@ -10,7 +10,6 @@ body {
 }
 
 #shadow {
-  display: none;
   position: fixed;
   width: 100%;
   height: 100%;
@@ -27,17 +26,21 @@ header h1 {
   text-align: center;
 }
 
-main .player-display {
+main .game {
+  display: none;
+}
+
+main .game .player-display {
   text-align: center;
-  margin: .5em 0;
+  margin: 0.5em 0;
   font-weight: 300;
 }
 
-main .player-display #player-num {
+main .game .player-display #player-num {
   font-size: 1.2em;
 }
 
-main .game-board {
+main .game .game-board {
   display: -ms-grid;
   display: grid;
   -ms-grid-rows: 1fr 1fr 1fr;
@@ -50,7 +53,7 @@ main .game-board {
   border-radius: 8px;
 }
 
-main .game-board .board-locker {
+main .game .game-board .board-locker {
   padding: 2rem;
   margin: 0.5rem;
   border-radius: 5%;
@@ -59,13 +62,13 @@ main .game-board .board-locker {
   color: black;
 }
 
-main .game-board .board-locker:hover {
+main .game .game-board .board-locker:hover {
   -webkit-transition: all ease 200ms;
   transition: all ease 200ms;
   background-color: #d3dcde;
 }
 
-main .game-board .board-locker[data-player="1"] {
+main .game .game-board .board-locker[data-player="1"] {
   background-image: url("../icons/circle.svg");
   background-size: 80%;
   background-repeat: no-repeat;
@@ -73,7 +76,7 @@ main .game-board .board-locker[data-player="1"] {
   background-color: #3498db;
 }
 
-main .game-board .board-locker[data-player="2"] {
+main .game .game-board .board-locker[data-player="2"] {
   background-image: url("../icons/cross.svg");
   background-size: 80%;
   background-repeat: no-repeat;
@@ -81,24 +84,27 @@ main .game-board .board-locker[data-player="2"] {
   background-color: #e74c3c;
 }
 
-main .result-banner {
+main .banner {
   -webkit-transition: all 300ms ease;
   transition: all 300ms ease;
-  display: none;
   position: absolute;
   background-color: white;
   padding: 3em 0;
   width: 100%;
 }
 
-main .result-banner h2 {
+main .banner h2 {
   font-size: 2rem;
   text-align: center;
-  margin-bottom: .5em;
+  margin-bottom: 0.5em;
 }
 
-main .result-banner h4 {
+main .banner h4 {
   text-align: center;
+}
+
+main .result-banner {
+  display: none;
 }
 
 footer {
@@ -120,8 +126,8 @@ footer {
 }
 
 .btn {
-  margin: .5em;
-  padding: .75em 1em;
+  margin: 0.5em;
+  padding: 0.75em 1em;
   font-size: medium;
   font-weight: 400;
   color: white;

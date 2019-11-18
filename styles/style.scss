@@ -18,12 +18,12 @@ body {
 }
 
 #shadow {
-  display: none;
+  // display: none;
   position: fixed;
   width: 100%;
   height: 100%;
 
-  background-color: rgba($color: #000000, $alpha: 0.80);
+  background-color: rgba($color: #000000, $alpha: 0.8);
 }
 
 header {
@@ -37,72 +37,74 @@ header {
   }
 }
 
-
 main {
-  .player-display {
-    text-align: center;
-    margin: .5em 0;
 
-    font-weight: 300;
+  .game {
+    display: none;
+    .player-display {
+      text-align: center;
+      margin: 0.5em 0;
 
-    #player-num {
-      font-size: 1.2em;
+      font-weight: 300;
+
+      #player-num {
+        font-size: 1.2em;
+      }
+    }
+
+    .game-board {
+      display: grid;
+      grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr;
+
+      height: 30em;
+      width: 30em;
+
+      margin: 1em auto 1em auto;
+
+      border: 3px $river solid;
+      border-radius: 8px;
+
+      .board-locker {
+        padding: 2rem;
+        margin: 0.5rem;
+        border-radius: 5%;
+
+        background-color: $clouds;
+
+        font-size: 4em;
+        color: black;
+
+        &:hover {
+          transition: all ease 200ms;
+          background-color: $clouds-darker;
+        }
+
+        &[data-player="1"] {
+          background-image: url("../icons/circle.svg");
+          background-size: 80%;
+          background-repeat: no-repeat;
+          background-position: center;
+          background-color: $river;
+        }
+
+        &[data-player="2"] {
+          background-image: url("../icons/cross.svg");
+          background-size: 80%;
+          background-repeat: no-repeat;
+          background-position: center;
+          background-color: $alizarin;
+        }
+      }
     }
   }
 
-  .game-board {
-    display: grid;
-    grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr;
-
-    height: 30em;
-    width: 30em;
-
-    margin: 1em auto 1em auto;
-
-    border: 3px $river solid;
-    border-radius: 8px;
-
-    .board-locker {
-      padding: 2rem;
-      margin: 0.5rem;
-      border-radius: 5%;
-
-      background-color: $clouds;
-
-      font-size: 4em;
-      color: black;
-
-      &:hover {
-        transition: all ease 200ms;
-        background-color: $clouds-darker;
-      }
-
-      &[data-player="1"] {
-        background-image: url("../icons/circle.svg");
-        background-size: 80%;
-        background-repeat: no-repeat;
-        background-position: center;
-        background-color: $river;
-      }
-
-      &[data-player="2"] {
-        background-image: url("../icons/cross.svg");
-        background-size: 80%;
-        background-repeat: no-repeat;
-        background-position: center;
-        background-color: $alizarin;
-      }
-    }
-  }
-
-  .result-banner {
+  .banner {
     transition: all 300ms ease;
 
-    display: none;
     position: absolute;
-    
+
     background-color: white;
-    
+
     padding: 3em 0;
     width: 100%;
 
@@ -110,14 +112,16 @@ main {
       font-size: 2rem;
       text-align: center;
 
-      margin-bottom: .5em;
+      margin-bottom: 0.5em;
     }
 
     h4 {
       text-align: center;
     }
   }
-
+  .result-banner {
+    display: none;
+  }
 }
 
 footer {
@@ -132,8 +136,8 @@ footer {
 }
 
 .btn {
-  margin: .5em;
-  padding: .75em 1em;
+  margin: 0.5em;
+  padding: 0.75em 1em;
 
   font-size: medium;
   font-weight: 400;

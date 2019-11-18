@@ -21,17 +21,26 @@
   </header>
 
   <main>
-    <h2 class="player-display">Player <b id="player-num"></b>'s turn</h2>
-    <div class="result-banner">
-      <h2 id="result"></h2>
-
-      <h4>Play again</h4>
+    <div class="banner menu">
+      <h2>Game mode: </h2>
       <div class="flex-row">
-        <button class="btn play-player">2 Players</button>
-        <button class="btn play-ai">Against AI </button>
+        <button class="btn start-player">2 Players</button>
+        <button class="btn start-ai">Against AI </button>
       </div>
     </div>
-    <div class="game-board"></div>
+    <div class="game">
+      <h2 class="player-display">Player <b id="player-num"></b>'s turn</h2>
+      <div class="banner result-banner">
+        <h2 id="result"></h2>
+
+        <h4>Play again</h4>
+        <div class="flex-row">
+          <button class="btn play-player">2 Players</button>
+          <button class="btn play-ai">Against AI </button>
+        </div>
+      </div>
+      <div class="game-board"></div>
+    </div>
   </main>
 
   <footer>
@@ -46,7 +55,7 @@
     </small>
   </footer>
 
-  <script type="module" src="js/dom.js"></script>
+  <script type="module" src="js/dom.mjs"></script>
 </body>
 
 </html>

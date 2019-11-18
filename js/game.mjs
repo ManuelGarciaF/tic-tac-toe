@@ -1,3 +1,5 @@
+import { aiRandom } from "./ai.mjs";
+
 let _board = [0, 0, 0, 0, 0, 0, 0, 0, 0];
 
 let _enableAi = false;
@@ -40,11 +42,14 @@ const _checkBoard = () => {
 };
 
 const makeMove = index => {
+  console.log({ _enableAi, _board, _currentPlayer });
   if (_board[index] !== 0) return -2;
   _board[index] = _currentPlayer;
 
   if (_enableAi) {
-    // TODO: AI
+    if (_board.includes(0)) {
+      _board[aiRandom(_board)] = 2
+    }
   } else {
     _currentPlayer = _currentPlayer === 1 ? 2 : 1; // Toggle _currentPlayer
   }
@@ -56,7 +61,6 @@ const reset = aiChoice => {
   _enableAi = aiChoice;
   _board = [0, 0, 0, 0, 0, 0, 0, 0, 0];
   _currentPlayer = 1;
-  console.log(_board)
 };
 
 const getCurrentPlayer = () => _currentPlayer;
