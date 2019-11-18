@@ -1,5 +1,6 @@
 # Tic Tac Toe
 ### Html game using javascript.
+#### Play [here](https://manuelgarciaf.github.io/tic-tac-toe/)
 
 ## Modules
 ### game.js
